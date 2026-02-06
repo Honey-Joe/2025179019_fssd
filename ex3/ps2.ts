@@ -67,4 +67,7 @@ namespace MainModule {
   let acc1 = new BankAccount(121, "Joe", 500);
 
   Transaction.deposit(acc1, 200, "Deposited ");
+  Transaction.withdraw(acc1 , 300)
+  console.log(Transaction.trans);
+  
 }
