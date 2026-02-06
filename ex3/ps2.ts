@@ -19,7 +19,8 @@ namespace TransactionModule {
 
   export class Transaction {
     static trans: number = 0;
-
+    static deposit(acc:BankAccount , amt:number):void;
+    static deposit(acc:BankAccount , amt:number , remark?:string):void
     static deposit(
       acc: BankAccount,
       amt: number,

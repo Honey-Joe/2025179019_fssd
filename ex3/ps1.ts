@@ -26,7 +26,9 @@ interface Intern extends Employee {
 }
 
 
-
+function calculateSalary(emp:Permanent):number;
+function calculateSalary(emp:Contract):number;
+function calculateSalary(emp:Intern):number;
 function calculateSalary(
   emp: Permanent | Contract | Intern
 ): number {
