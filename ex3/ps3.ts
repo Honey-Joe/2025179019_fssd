@@ -11,7 +11,6 @@ interface Student {
 
 function enroll(student: Student) {
   let courses = student.enrolledCourse;
-
   const register = (course: Course): void => {
     let newCourse = course;
     courses.push(newCourse);
@@ -19,9 +18,14 @@ function enroll(student: Student) {
   };
 
   function dropCourse(courseCode: string): void {
-    courses = courses.filter((c) => c.ccode !== courseCode);
+  const index = courses.findIndex(c => c.ccode === courseCode);
+
+  if (index !== -1) {
+    courses.splice(index, 1); 
     console.log(`Dropped course: ${courseCode}`);
   }
+}
+
 
   return {
     register,
@@ -46,4 +50,9 @@ const student = {
 const en = enroll(student);
 
 en.register(encourse)
+console.log(student.enrolledCourse);
+
+en.dropCourse("AA101")
+console.log("After Delete : " , student);
+
 
