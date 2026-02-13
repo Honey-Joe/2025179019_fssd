@@ -20,4 +20,5 @@ var login = function (userName, password) {
         console.log("This line is not executed");
     }
 };
-login("admin", "12");
+login("admin", "123");
+login("user", "123");
